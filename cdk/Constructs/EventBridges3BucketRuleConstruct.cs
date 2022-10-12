@@ -10,7 +10,8 @@ namespace EventBridgeCdkStack.Constructs
     public class EventBridges3BucketRuleConstruct : Construct
     {
         public EventBridges3BucketRuleConstruct(Construct scope, 
-            string id)
+            string id,
+            string teamsWebHookUri)
             : base(scope, id)
         {
 
@@ -47,7 +48,7 @@ namespace EventBridgeCdkStack.Constructs
                 Code = Code.FromAsset("Code/S3"),
                 Environment = new Dictionary<string, string>
                 {
-                    {"teams_webhook_uri", "add-teams-webhook-uri"}
+                    {"teams_webhook_uri", $"{teamsWebHookUri}"}
                 }
             });
 

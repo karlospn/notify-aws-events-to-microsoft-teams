@@ -11,11 +11,21 @@ namespace EventBridgeCdkStack.Stacks
             IStackProps props = null)
             : base(scope, id, props)
         {
-             _ = new EventBridgeEcrPushRuleConstruct(this,
-                "ecr-push-rule-notifier");
+            var teamsWebHookUri = new CfnParameter(this, 
+                "teams-webhook-uri", 
+                new CfnParameterProps
+            {
+                Type = "String",
+                Description = "The URI of the Microsoft Teams Webhook"
+            });
+
+            _ = new EventBridgeEcrPushRuleConstruct(this,
+                "ecr-push-rule-notifier", 
+                teamsWebHookUri.ValueAsString);
 
              _ = new EventBridges3BucketRuleConstruct(this,
-                 "s3-create-or-delete-bucket-notifier");
+                 "s3-create-or-delete-bucket-notifier",
+                 teamsWebHookUri.ValueAsString);
 
         }
     }
