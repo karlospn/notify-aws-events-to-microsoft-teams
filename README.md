@@ -26,9 +26,9 @@ The setup to notify an AWS Event to Microsoft Teams is really simple:
 
 ## **CDK App Resources**
 
-The CDK app creates 2 EventBridge Rules and 2 lambda functions:
-- The first rule notifies when a new container image or tag gets pushed into ``ECR``.
-- The second rule notifies when an ``S3 Bucket`` is created or deleted.
+The CDK app creates **2 EventBridge Rules** and **2 lambda functions**:
+- The first rule notifies when a new container image or tag gets pushed into ``ECR`` and a lambda function post this event to Teams.
+- The second rule notifies when an ``S3 Bucket`` is created or deleted and another lambda function post those events to Teams.
 
 
 ## **How to deploy the CDK app**
