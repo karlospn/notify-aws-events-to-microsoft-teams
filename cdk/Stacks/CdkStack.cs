@@ -12,7 +12,7 @@ namespace EventBridgeCdkStack.Stacks
             : base(scope, id, props)
         {
             var teamsWebHookUri = new CfnParameter(this, 
-                "teams-webhook-uri", 
+                "teamsWebHookUri", 
                 new CfnParameterProps
             {
                 Type = "String",
