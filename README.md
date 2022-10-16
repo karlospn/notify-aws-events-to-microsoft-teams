@@ -37,7 +37,7 @@ The CDK app creates **2 EventBridge Rules** and **2 Lambda functions**:
 
 ![teams-incoming-webhook](https://raw.githubusercontent.com/karlospn/notify-aws-events-to-microsoft-teams/main/docs/teams-incoming-webhook.png)
 
-1. Deploy the CDK app.
+2. Deploy the CDK app.
 
 To deploy it, use the command:   
 - ``cdk deploy --profile <profile> --parameters teamsWebHookUri=<incoming-teams-webhook-uri>``
